@@ -1,0 +1,10 @@
+name: 'Build Corne Left (QWERTY + OLED)'
+on: workflow_dispatch
+jobs:
+  build:
+    uses: ./.github/workflows/main.yml
+    secrets: inherit
+    with:
+      board: '["nice_nano"]'
+      shield: '["corne_left"]'
+      kconfig: '["CONFIG_ZMK_RGB_UNDERGLOW=y\nCONFIG_BT_CTLR_TX_PWR_PLUS_8=y\nCONFIG_ZMK_SLEEP=y\nCONFIG_ZMK_DISPLAY=y"]'
